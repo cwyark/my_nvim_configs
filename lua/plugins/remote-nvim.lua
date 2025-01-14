@@ -7,6 +7,19 @@ return {
       "MunifTanjim/nui.nvim",
       "nvim-telescope/telescope.nvim",
     },
-    config = true,
+    config = {
+      remote = {
+        copy_dirs = {
+          data = {
+            base = vim.fn.stdpath("data"),
+            dirs = { "lazy" },
+            compression = {
+              enabled = true,
+              additional_opts = { "--exclude-vcs" },
+            },
+          },
+        },
+      },
+    },
   },
 }
