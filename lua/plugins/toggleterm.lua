@@ -7,6 +7,7 @@ return {
     config = function()
       -- reference for skipping lazygit for ESC key
       -- https://git.freiewildbahn.de/oli/nvim/src/commit/e308de510afeed59d3ff3f81790f5d6abcdebfe8/lua/plugins/toggleterm.lua#L6-L8
+      -- https://www.xiaoyizhiqu.com/xyzq_news/article/66b932394ddd79f11a2b9f36
       function _G.set_terminal_keymaps(term)
         local opts = { buffer = 0 } -- Set options for key mappings
         if term.cmd ~= "lazygit" then
@@ -20,18 +21,19 @@ return {
       end
       require("toggleterm").setup({
         on_open = set_terminal_keymaps,
+        hide_numbers = true,
+        shade_filetypes = {},
+        shade_terminals = true,
+        start_in_insert = true,
+        insert_mappings = true,
+        terminal_mappings = true,
+        direction = "horizontal" or "vertical" or "window" or "float",
+        close_on_exit = true,
+        float_opts = {
+          border = "curved",
+        },
       })
     end,
-    opts = {
-      hide_numbers = true,
-      shade_filetypes = {},
-      shade_terminals = true,
-      start_in_insert = true,
-      insert_mappings = true,
-      terminal_mappings = true,
-      direction = "horizontal" or "vertical" or "window" or "float",
-      close_on_exit = true,
-    },
     keys = {
       {
         "<leader>th",
