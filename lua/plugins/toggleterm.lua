@@ -2,8 +2,26 @@ return {
   {
     "akinsho/toggleterm.nvim",
     version = "2.13.1",
-    lazy = true,
+    -- lazy = true,
     cmd = { "ToggleTerm" },
+    config = function()
+      -- reference for skipping lazygit for ESC key
+      -- https://git.freiewildbahn.de/oli/nvim/src/commit/e308de510afeed59d3ff3f81790f5d6abcdebfe8/lua/plugins/toggleterm.lua#L6-L8
+      function _G.set_terminal_keymaps(term)
+        local opts = { buffer = 0 } -- Set options for key mappings
+        if term.cmd ~= "lazygit" then
+          vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], opts)
+        end
+        vim.keymap.set("t", "jk", [[<C-\><C-n>]], opts)
+        vim.keymap.set("t", "<C-j>", [[<Cmd>wincmd j<CR>]], opts)
+        vim.keymap.set("t", "<C-h>", [[<Cmd>wincmd h<CR>]], opts)
+        vim.keymap.set("t", "<C-k>", [[<Cmd>wincmd k<CR>]], opts)
+        vim.keymap.set("t", "<C-l>", [[<Cmd>wincmd l<CR>]], opts)
+      end
+      require("toggleterm").setup({
+        on_open = set_terminal_keymaps,
+      })
+    end,
     opts = {
       hide_numbers = true,
       shade_filetypes = {},
