@@ -30,7 +30,7 @@ require("lazy").setup({
     -- version = "*", -- try installing the latest stable version for plugins that support semver
     version = false, -- always use the latest git comit
   },
-  install = { colorscheme = { "catppuccin" } },
+  install = { colorscheme = { "catppuccin", "tokyonight" } },
   checker = {
     enabled = true, -- check for plugin updates periodically
     notify = false, -- notify on update
