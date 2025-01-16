@@ -10,13 +10,11 @@ return {
     config = {
       remote = {
         copy_dirs = {
-          data = {
-            base = vim.fn.stdpath("data"),
+          base = vim.fn.stdpath("data"),
+          compression = {
             dirs = { "lazy" },
-            compression = {
-              enabled = true,
-              additional_opts = { "--exclude-vcs" },
-            },
+            enabled = true,
+            additional_opts = { "--exclude-vcs" },
           },
         },
       },

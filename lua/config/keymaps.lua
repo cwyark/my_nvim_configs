@@ -2,6 +2,9 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+-- Remap <C-i> to scroll up
+vim.keymap.set("n", "<C-i>", "<C-d>", { noremap = true, silent = true })
+
 -- delete lazyvim's default terminal key bindings
 vim.keymap.del("n", "<leader>fT")
 vim.keymap.del("n", "<C-/>")
