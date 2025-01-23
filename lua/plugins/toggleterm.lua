@@ -60,16 +60,8 @@ return {
   {
     "folke/which-key.nvim",
     opts = {
-      icons = {
-        rules = {
-          {
-            pattern = "term",
-            icon = "💻",
-          },
-        },
-      },
       spec = {
-        { "<leader>t", group = "terminal", icon = "💻" },
+        { "<leader>t", group = "terminal", icon = "" },
       },
     },
   },
