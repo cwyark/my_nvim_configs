@@ -59,15 +59,18 @@ return {
   },
   {
     "folke/which-key.nvim",
-    opts = function(_, opts)
-      opts.icons = {
+    opts = {
+      icons = {
         rules = {
           {
             pattern = "term",
             icon = "💻",
           },
         },
-      }
-    end,
+      },
+      spec = {
+        { "<leader>t", group = "terminal", icon = "💻" },
+      },
+    },
   },
 }
