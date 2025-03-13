@@ -7,7 +7,7 @@ return {
     build = "npm install -g mcp-hub@latest",
     config = {
       port = 3000,
-      config = vim.fn.expand("~/.mcpservers.json"),
+      config = vim.fn.stdpath("config") .. "/mcpservers.json",
     },
   },
 }
