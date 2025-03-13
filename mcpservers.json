@@ -1,11 +1,54 @@
 {
   "mcpServers": {
+    "sequential-thinking": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ]
+    },
+    "puppeteer": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-puppeteer"
+      ]
+    },
+    "time": {
+      "command": "uvx",
+      "args": [
+        "mcp-server-time",
+        "--local-timezone",
+        "Asia/Taipei"
+      ]
+    },
+    "git": {
+      "command": "uvx",
+      "args": [
+        "mcp-server-git",
+        "--repository",
+        "${PWD}"
+      ]
+    },
     "fetch": {
+      "command": "uvx",
       "args": [
         "mcp-server-fetch"
-      ],
+      ]
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "./"
+      ]
+    },
+    "docker": {
       "command": "uvx",
-      "disabled_tools": []
+      "args": [
+        "docker-mcp"
+      ]
     }
   }
 }

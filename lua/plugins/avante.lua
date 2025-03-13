@@ -38,6 +38,16 @@ return {
       behaviour = {
         enable_cursor_planning_mode = false,
       },
+      system_prompt = function()
+        local hub = require("mcphub").get_hub_instance()
+        return hub:get_active_servers_prompt()
+      end,
+      custom_tools = function()
+        return {
+
+          require("mcphub.extensions.avante").mcp_tool(),
+        }
+      end,
     },
     build = "make",
     dependencies = {
