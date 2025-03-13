@@ -10,11 +10,26 @@ return {
       auto_suggestions_provider = "openai",
       openai = {
         endpoint = "https://api.openai.com/v1",
-        -- model = "gpt-4o",
         model = "o3-mini",
         timeout = 30000,
         temperature = 0,
         max_tokens = 4096,
+      },
+      vendors = {
+        local_ollama = {
+          __inherited_from = "openai",
+          api_key_name = "",
+          endpoint = "http://127.0.0.1:11434/v1",
+          model = "codegemma",
+          disable_tools = true, -- Open-source models often do not support tools.
+        },
+        remote_ollama = {
+          __inherited_from = "openai",
+          api_key_name = "",
+          endpoint = "http://172.17.40.58:11434/v1",
+          model = "gemma3:27b",
+          disable_tools = true, -- Open-source models often do not support tools.
+        },
       },
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
