@@ -9,14 +9,12 @@ return {
       vendors = {
         local_ollama = {
           __inherited_from = "openai",
-          api_key_name = "",
           endpoint = "http://127.0.0.1:11434/v1",
-          model = "codegemma",
+          model = "gemma3:4b",
           disable_tools = true, -- Open-source models often do not support tools.
         },
         remote_ollama = {
           __inherited_from = "openai",
-          api_key_name = "",
           endpoint = "http://172.17.40.58:11434/v1",
           model = "gemma3:27b",
           disable_tools = true, -- Open-source models often do not support tools.
