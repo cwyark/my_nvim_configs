@@ -2,19 +2,10 @@ return {
   {
     "yetone/avante.nvim",
     event = "VeryLazy",
-    lazy = false,
-    version = false, -- set this to "*" if you want to always pull the latest change, false to update on release
     opts = {
       -- add any opts here
-      provider = "openai",
+      provider = "o3_mini",
       auto_suggestions_provider = "openai",
-      openai = {
-        endpoint = "https://api.openai.com/v1",
-        model = "o3-mini",
-        timeout = 30000,
-        temperature = 0,
-        max_tokens = 4096,
-      },
       vendors = {
         local_ollama = {
           __inherited_from = "openai",
@@ -30,19 +21,31 @@ return {
           model = "gemma3:27b",
           disable_tools = true, -- Open-source models often do not support tools.
         },
+        o3_mini = {
+          __inherited_from = "openai",
+          endpoint = "https://api.openai.com/v1",
+          model = "o3-mini",
+          disable_tools = true, -- Open-source models often do not support tools.
+        },
+        gpt_4o = {
+          __inherited_from = "openai",
+          endpoint = "https://api.openai.com/v1",
+          model = "gpt-4o",
+          disable_tools = true, -- Open-source models often do not support tools.
+        },
+      },
+      cursor_applying_provider = "gpt_4o",
+      behaviour = {
+        enable_cursor_planning_mode = true,
       },
     },
-    -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
     build = "make",
-    -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
     dependencies = {
       "stevearc/dressing.nvim",
       "nvim-lua/plenary.nvim",
       "MunifTanjim/nui.nvim",
-      --- The below dependencies are optional,
-      "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
-      "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-      -- "zbirenbaum/copilot.lua", -- for providers='copilot'
+      "hrsh7th/nvim-cmp",
+      "nvim-tree/nvim-web-devicons",
       {
         -- support for image pasting
         "HakonHarnes/img-clip.nvim",
