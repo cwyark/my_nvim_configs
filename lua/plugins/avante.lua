@@ -42,7 +42,6 @@ return {
       end,
       custom_tools = function()
         return {
-
           require("mcphub.extensions.avante").mcp_tool(),
         }
       end,
