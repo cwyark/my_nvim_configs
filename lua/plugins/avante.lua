@@ -36,15 +36,19 @@ return {
       },
       cursor_applying_provider = "gpt_4o",
       behaviour = {
-        enable_cursor_planning_mode = true,
+        enable_cursor_planning_mode = false,
       },
     },
     build = "make",
     dependencies = {
+      "nvim-treesitter/nvim-treesitter",
       "stevearc/dressing.nvim",
       "nvim-lua/plenary.nvim",
       "MunifTanjim/nui.nvim",
+      "echasnovski/mini.pick",
+      "nvim-telescope/telescope.nvim",
       "hrsh7th/nvim-cmp",
+      "ibhagwan/fzf-lua",
       "nvim-tree/nvim-web-devicons",
       {
         -- support for image pasting
@@ -58,7 +62,6 @@ return {
             drag_and_drop = {
               insert_mode = true,
             },
-            -- required for Windows users
             use_absolute_path = true,
           },
         },
