@@ -12,31 +12,31 @@ return {
           __inherited_from = "openai",
           endpoint = "http://127.0.0.1:11434/v1",
           model = "gemma3:4b",
-          disable_tools = true, -- Open-source models often do not support tools.
+          disable_tools = false,
         },
         remote_ollama = {
           __inherited_from = "openai",
           endpoint = "http://172.17.40.58:11434/v1",
           model = "gemma3:27b",
-          disable_tools = true, -- Open-source models often do not support tools.
+          disable_tools = false,
         },
         o3_mini = {
           __inherited_from = "openai",
           endpoint = "https://api.openai.com/v1",
           model = "o3-mini",
-          disable_tools = true, -- Open-source models often do not support tools.
+          disable_tools = false,
         },
         gpt_4o = {
           __inherited_from = "openai",
           endpoint = "https://api.openai.com/v1",
           model = "gpt-4o",
-          disable_tools = true, -- Open-source models often do not support tools.
+          disable_tools = false,
         },
         gpt_4o_mini = {
           __inherited_from = "openai",
           endpoint = "https://api.openai.com/v1",
           model = "gpt-4o-mini",
-          disable_tools = true, -- Open-source models often do not support tools.
+          disable_tools = false,
         },
       },
       cursor_applying_provider = "gpt_4o",
