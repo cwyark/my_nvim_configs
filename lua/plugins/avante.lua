@@ -2,6 +2,7 @@ return {
   {
     "yetone/avante.nvim",
     event = "VeryLazy",
+    version = false,
     opts = {
       -- add any opts here
       provider = "o3_mini",
