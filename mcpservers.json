@@ -2,35 +2,35 @@
   "mcpServers": {
     "filesystem": {
       "command": "npx",
+      "disabled": false,
       "args": [
         "-y",
         "@modelcontextprotocol/server-filesystem",
         "./"
-      ],
-      "disabled": false
+      ]
     },
-    "fetch": {
-      "command": "uvx",
+    "puppeteer": {
+      "command": "npx",
       "disabled": false,
       "args": [
-        "mcp-server-fetch"
+        "-y",
+        "@modelcontextprotocol/server-puppeteer"
       ]
     },
     "sequential-thinking": {
       "command": "npx",
+      "disabled": false,
       "args": [
         "-y",
         "@modelcontextprotocol/server-sequential-thinking"
-      ],
-      "disabled": false
+      ]
     },
-    "git": {
-      "command": "uvx",
+    "memory": {
+      "command": "npx",
       "disabled": false,
       "args": [
-        "mcp-server-git",
-        "--repository",
-        "${PWD}"
+        "-y",
+        "@modelcontextprotocol/server-memory"
       ]
     },
     "time": {
@@ -44,26 +44,26 @@
     },
     "docker": {
       "command": "uvx",
-      "args": [
-        "docker-mcp"
-      ],
-      "disabled": false
-    },
-    "puppeteer": {
-      "command": "npx",
       "disabled": false,
       "args": [
-        "-y",
-        "@modelcontextprotocol/server-puppeteer"
+        "docker-mcp"
       ]
     },
-    "memory": {
-      "command": "npx",
+    "git": {
+      "command": "uvx",
+      "disabled": false,
       "args": [
-        "-y",
-        "@modelcontextprotocol/server-memory"
-      ],
-      "disabled": false
+        "mcp-server-git",
+        "--repository",
+        "${PWD}"
+      ]
+    },
+    "fetch": {
+      "command": "uvx",
+      "disabled": false,
+      "args": [
+        "mcp-server-fetch"
+      ]
     }
   }
 }

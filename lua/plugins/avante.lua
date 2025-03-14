@@ -31,6 +31,12 @@ return {
           model = "gpt-4o",
           disable_tools = true, -- Open-source models often do not support tools.
         },
+        gpt_4o_mini = {
+          __inherited_from = "openai",
+          endpoint = "https://api.openai.com/v1",
+          model = "gpt-4o-mini",
+          disable_tools = true, -- Open-source models often do not support tools.
+        },
       },
       cursor_applying_provider = "gpt_4o",
       behaviour = {
