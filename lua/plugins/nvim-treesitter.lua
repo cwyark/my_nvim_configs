@@ -1,5 +1,6 @@
 return {
   "nvim-treesitter/nvim-treesitter",
+  version = "*",
   opts = {
     highlight = { enable = true },
     indent = { enable = true },

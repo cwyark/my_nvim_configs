@@ -1,5 +1,6 @@
 return {
   "snacks.nvim",
+  version = "*",
   opts = {
     dashboard = {
       preset = {

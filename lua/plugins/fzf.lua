@@ -1,6 +1,7 @@
 return {
   {
     "ibhagwan/fzf-lua",
+    version = "*",
     opts = function(_, opts)
       local fzf = require("fzf-lua")
       local actions = fzf.actions
