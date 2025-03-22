@@ -1,13 +1,13 @@
 return {
   {
     "ravitemer/mcphub.nvim",
-    version = false,
+    version = "*",
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
     build = "npm install -g mcp-hub@latest",
     opts = {
-      port = 33000,
+      port = 32400,
       config = vim.fn.stdpath("config") .. "/mcpservers.json",
       shutdown_delay = 0, -- Wait 0ms before shutting down server after last client exits
       log = {

@@ -1,76 +1,86 @@
 {
   "mcpServers": {
     "filesystem": {
-      "command": "npx",
       "disabled": false,
+      "command": "npx",
       "args": [
         "-y",
         "@modelcontextprotocol/server-filesystem",
         "./"
       ]
     },
-    "puppeteer": {
-      "command": "npx",
+    "repomix": {
       "disabled": false,
+      "custom_instructions": {
+        "disabled": true
+      },
+      "command": "npx",
       "args": [
         "-y",
-        "@modelcontextprotocol/server-puppeteer"
-      ]
-    },
-    "sequential-thinking": {
-      "command": "npx",
-      "disabled": false,
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-sequential-thinking"
-      ]
-    },
-    "memory": {
-      "command": "npx",
-      "disabled": false,
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-memory"
+        "repomix",
+        "--mcp"
       ]
     },
     "time": {
-      "command": "uvx",
       "disabled": false,
+      "custom_instructions": {
+        "disabled": false
+      },
+      "command": "uvx",
       "args": [
         "mcp-server-time",
         "--local-timezone",
         "Asia/Taipei"
       ]
     },
-    "docker": {
-      "command": "uvx",
+    "fetch": {
       "disabled": false,
+      "command": "uvx",
+      "args": [
+        "mcp-server-fetch"
+      ]
+    },
+    "docker": {
+      "disabled": true,
+      "command": "uvx",
       "args": [
         "docker-mcp"
       ]
     },
     "git": {
+      "disabled": true,
       "command": "uvx",
-      "disabled": false,
       "args": [
         "mcp-server-git",
         "--repository",
         "${PWD}"
       ]
     },
-    "fetch": {
-      "command": "uvx",
-      "disabled": false,
-      "args": [
-        "mcp-server-fetch"
-      ]
-    },
-    "repomix": {
+    "memory": {
+      "disabled": true,
       "command": "npx",
       "args": [
         "-y",
-        "repomix",
-        "--mcp"
+        "@modelcontextprotocol/server-memory"
+      ]
+    },
+    "sequential-thinking": {
+      "disabled": false,
+      "custom_instructions": {
+        "disabled": true
+      },
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ]
+    },
+    "puppeteer": {
+      "disabled": true,
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-puppeteer"
       ]
     }
   }

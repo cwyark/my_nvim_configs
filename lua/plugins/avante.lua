@@ -2,7 +2,7 @@ return {
   {
     "yetone/avante.nvim",
     event = "VeryLazy",
-    version = false,
+    version = "*",
     opts = {
       -- add any opts here
       provider = "o3_mini",
@@ -45,6 +45,7 @@ return {
       },
       system_prompt = function()
         local hub = require("mcphub").get_hub_instance()
+        ---@diagnostic disable-next-line: need-check-nil
         return hub:get_active_servers_prompt()
       end,
       custom_tools = function()
