@@ -4,59 +4,47 @@ return {
     event = "VeryLazy",
     -- version = "v0.0.23"
     version = false,
-    opts = function()
-      local system_prompt
-      local hub = require("mcphub").get_hub_instance()
-      if hub == nil then
-        print("hub is nil")
-      else
-        system_prompt = hub:get_active_servers_prompt()
-      end
-      local mcp_tools = require("mcphub.extensions.avante").mcp_tool()
-      return {
-        -- add any opts here
-        provider = "o3_mini",
-        auto_suggestions_provider = "openai",
-        vendors = {
-          local_ollama = {
-            __inherited_from = "openai",
-            endpoint = "http://127.0.0.1:11434/v1",
-            model = "gemma3:4b",
-            disable_tools = true,
-          },
-          remote_ollama = {
-            __inherited_from = "openai",
-            endpoint = "http://172.17.40.58:11434/v1",
-            model = "gemma3:27b",
-            disable_tools = true,
-          },
-          o3_mini = {
-            __inherited_from = "openai",
-            endpoint = "https://api.openai.com/v1",
-            model = "o3-mini",
-            disable_tools = true,
-          },
-          gpt_4o = {
-            __inherited_from = "openai",
-            endpoint = "https://api.openai.com/v1",
-            model = "gpt-4o",
-            disable_tools = true,
-          },
-          gpt_4o_mini = {
-            __inherited_from = "openai",
-            endpoint = "https://api.openai.com/v1",
-            model = "gpt-4o-mini",
-            disable_tools = true,
-          },
+    opts = {
+      provider = "o3_mini",
+      vendors = {
+        local_ollama = {
+          __inherited_from = "openai",
+          endpoint = "http://127.0.0.1:11434/v1",
+          model = "gemma3:4b",
+          disable_tools = true,
         },
-        cursor_applying_provider = "gpt_4o",
-        behaviour = {
-          enable_cursor_planning_mode = false,
+        remote_ollama = {
+          __inherited_from = "openai",
+          endpoint = "http://172.17.40.58:11434/v1",
+          model = "gemma3:27b",
+          disable_tools = true,
         },
-        system_prompt = system_prompt,
-        custom_tools = mcp_tools,
-      }
-    end,
+        o3_mini = {
+          __inherited_from = "openai",
+          endpoint = "https://api.openai.com/v1",
+          model = "o3-mini",
+        },
+        gpt_4o = {
+          __inherited_from = "openai",
+          endpoint = "https://api.openai.com/v1",
+          model = "gpt-4o",
+        },
+        gpt_4o_mini = {
+          __inherited_from = "openai",
+          endpoint = "https://api.openai.com/v1",
+          model = "gpt-4o-mini",
+        },
+      },
+      system_prompt = function()
+        local hub = require("mcphub").get_hub_instance()
+        return hub:get_active_servers_prompt()
+      end,
+      custom_tools = function()
+        return {
+          require("mcphub.extensions.avante").mcp_tool(),
+        }
+      end,
+    },
     build = "make",
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
