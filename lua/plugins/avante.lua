@@ -11,13 +11,11 @@ return {
           __inherited_from = "openai",
           endpoint = "http://127.0.0.1:11434/v1",
           model = "gemma3:4b",
-          disable_tools = true,
         },
         remote_ollama = {
           __inherited_from = "openai",
           endpoint = "http://172.17.40.58:11434/v1",
           model = "gemma3:27b",
-          disable_tools = true,
         },
         o3_mini = {
           __inherited_from = "openai",

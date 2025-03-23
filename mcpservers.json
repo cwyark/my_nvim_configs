@@ -1,87 +1,75 @@
 {
   "mcpServers": {
     "git": {
-      "disabled": true,
+      "command": "uvx",
+      "disabled": false,
       "args": [
         "mcp-server-git",
         "--repository",
         "${PWD}"
-      ],
-      "command": "uvx"
-    },
-    "memory": {
-      "disabled": true,
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-memory"
-      ],
-      "command": "npx"
+      ]
     },
     "sequential-thinking": {
       "custom_instructions": {
         "disabled": true
       },
+      "disabled": false,
       "args": [
         "-y",
         "@modelcontextprotocol/server-sequential-thinking"
       ],
-      "command": "npx",
-      "disabled": true
-    },
-    "time": {
-      "custom_instructions": {
-        "disabled": true
-      },
-      "args": [
-        "mcp-server-time",
-        "--local-timezone",
-        "Asia/Taipei"
-      ],
-      "command": "uvx",
-      "disabled": false
-    },
-    "puppeteer": {
-      "disabled": true,
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-puppeteer"
-      ],
       "command": "npx"
     },
+    "memory": {
+      "command": "npx",
+      "disabled": false,
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-memory"
+      ]
+    },
+    "fetch": {
+      "command": "uvx",
+      "disabled": false,
+      "args": [
+        "mcp-server-fetch"
+      ]
+    },
     "filesystem": {
-      "disabled": true,
+      "command": "npx",
+      "disabled": false,
       "args": [
         "-y",
         "@modelcontextprotocol/server-filesystem",
         "./"
-      ],
-      "command": "npx"
-    },
-    "docker": {
-      "disabled": false,
-      "args": [
-        "docker-mcp"
-      ],
-      "command": "uvx"
+      ]
     },
     "repomix": {
       "custom_instructions": {
         "disabled": true
       },
+      "disabled": true,
+      "command": "npx",
       "args": [
         "-y",
         "repomix",
         "--mcp"
-      ],
-      "command": "npx",
-      "disabled": true
+      ]
     },
-    "fetch": {
+    "docker": {
+      "command": "uvx",
       "disabled": false,
       "args": [
-        "mcp-server-fetch"
-      ],
-      "command": "uvx"
+        "docker-mcp"
+      ]
+    },
+    "puppeteer": {
+      "command": "npx",
+      "disabled": true,
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-puppeteer"
+      ]
     }
   }
 }
