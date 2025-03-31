@@ -32,6 +32,16 @@ return {
           endpoint = "https://api.openai.com/v1",
           model = "gpt-4o-mini",
         },
+        cursor_apply_model = {
+          __inherited_from = "openai",
+          endpoint = "https://api.openai.com/v1",
+          model = "gpt-4o-mini",
+          max_completion_tokens = 16384,
+        },
+      },
+      cursor_applying_provider = "cursor_apply_model",
+      behaviour = {
+        enable_cursor_planning_mode = true,
       },
       system_prompt = function()
         local hub = require("mcphub").get_hub_instance()
