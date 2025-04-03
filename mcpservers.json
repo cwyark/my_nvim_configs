@@ -1,54 +1,61 @@
 {
+  "nativeMCPServers": [],
   "mcpServers": {
     "git": {
-      "command": "uvx",
       "disabled": false,
+      "command": "uvx",
       "args": [
         "mcp-server-git",
         "--repository",
         "${PWD}"
       ]
     },
-    "sequential-thinking": {
-      "custom_instructions": {
-        "disabled": true
-      },
-      "disabled": false,
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-sequential-thinking"
-      ],
-      "command": "npx"
-    },
-    "memory": {
-      "command": "npx",
-      "disabled": false,
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-memory"
-      ]
-    },
     "fetch": {
-      "command": "uvx",
       "disabled": false,
+      "command": "uvx",
       "args": [
         "mcp-server-fetch"
       ]
     },
     "filesystem": {
-      "command": "npx",
       "disabled": false,
+      "command": "npx",
       "args": [
         "-y",
         "@modelcontextprotocol/server-filesystem",
         "./"
       ]
     },
-    "repomix": {
+    "sequential-thinking": {
+      "disabled": false,
       "custom_instructions": {
         "disabled": true
       },
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ]
+    },
+    "time": {
       "disabled": true,
+      "command": "uvx",
+      "args": [
+        "mcp-server-time"
+      ]
+    },
+    "docker": {
+      "disabled": false,
+      "command": "uvx",
+      "args": [
+        "docker-mcp"
+      ]
+    },
+    "repomix": {
+      "disabled": false,
+      "custom_instructions": {
+        "disabled": true
+      },
       "command": "npx",
       "args": [
         "-y",
@@ -56,19 +63,20 @@
         "--mcp"
       ]
     },
-    "docker": {
-      "command": "uvx",
-      "disabled": false,
-      "args": [
-        "docker-mcp"
-      ]
-    },
     "puppeteer": {
+      "disabled": false,
       "command": "npx",
-      "disabled": true,
       "args": [
         "-y",
         "@modelcontextprotocol/server-puppeteer"
+      ]
+    },
+    "memory": {
+      "disabled": false,
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-memory"
       ]
     }
   }

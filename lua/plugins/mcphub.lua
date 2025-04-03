@@ -11,7 +11,7 @@ return {
       port = 32400,
       config = vim.fn.stdpath("config") .. "/mcpservers.json",
       log = {
-        level = vim.log.levels.INFO,
+        level = vim.log.levels.WARN,
         to_file = false,
         file_path = nil,
         prefix = "MCPHub",

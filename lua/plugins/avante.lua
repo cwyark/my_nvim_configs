@@ -5,7 +5,7 @@ return {
     -- version = "v0.0.23"
     version = false,
     opts = {
-      provider = "o3_mini",
+      provider = "gpt_4o",
       vendors = {
         local_ollama = {
           __inherited_from = "openai",
@@ -32,20 +32,23 @@ return {
           endpoint = "https://api.openai.com/v1",
           model = "gpt-4o-mini",
         },
-        cursor_apply_model = {
+        fast_apply_model = {
           __inherited_from = "openai",
-          endpoint = "https://api.openai.com/v1",
-          model = "gpt-4o-mini",
-          max_completion_tokens = 16384,
+          endpoint = "http://127.0.0.1:11434/v1",
+          model = "hf.co/Kortix/FastApply-1.5B-v1.0_GGUF:Q4_K_M",
         },
       },
-      cursor_applying_provider = "cursor_apply_model",
+      cursor_applying_provider = "fast_apply_model",
       behaviour = {
         enable_cursor_planning_mode = true,
       },
       system_prompt = function()
         local hub = require("mcphub").get_hub_instance()
-        return hub:get_active_servers_prompt()
+        if hub then
+          return hub:get_active_servers_prompt()
+        else
+          return nil
+        end
       end,
       custom_tools = function()
         return {
