@@ -8,6 +8,12 @@ return {
       "nvim-telescope/telescope.nvim",
     },
     config = {
+      devpod = {
+        dotfiles = {
+          path = "https://github.com/cwyark/dotfiles.git",
+          install_script = ".local/bin/install.sh",
+        },
+      },
       remote = {
         copy_dirs = {
           config = {
