@@ -5,7 +5,7 @@ return {
     -- version = "v0.0.23"
     version = false,
     opts = {
-      provider = "gpt_4o",
+      provider = "gpt_4dot1",
       vendors = {
         local_ollama = {
           __inherited_from = "openai",
@@ -31,6 +31,21 @@ return {
           __inherited_from = "openai",
           endpoint = "https://api.openai.com/v1",
           model = "gpt-4o-mini",
+        },
+        gpt_4dot1 = {
+          __inherited_from = "openai",
+          endpoint = "https://api.openai.com/v1",
+          model = "gpt-4.1",
+        },
+        gpt_4dot1_mini = {
+          __inherited_from = "openai",
+          endpoint = "https://api.openai.com/v1",
+          model = "gpt-4.1-mini",
+        },
+        gpt_4dot1_nano = {
+          __inherited_from = "openai",
+          endpoint = "https://api.openai.com/v1",
+          model = "gpt-4.1-nano",
         },
         fast_apply_model = {
           __inherited_from = "openai",
