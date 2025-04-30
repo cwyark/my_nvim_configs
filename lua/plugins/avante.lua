@@ -10,7 +10,7 @@ return {
         local_ollama = {
           __inherited_from = "openai",
           endpoint = "http://127.0.0.1:11434/v1",
-          model = "gemma3:4b",
+          model = "gemma3:12b",
         },
         remote_ollama = {
           __inherited_from = "openai",
@@ -21,6 +21,11 @@ return {
           __inherited_from = "openai",
           endpoint = "https://api.openai.com/v1",
           model = "o3-mini",
+        },
+        o4_mini = {
+          __inherited_from = "openai",
+          endpoint = "https://api.openai.com/v1",
+          model = "o4-mini",
         },
         gpt_4o = {
           __inherited_from = "openai",
@@ -53,7 +58,8 @@ return {
           model = "hf.co/Kortix/FastApply-1.5B-v1.0_GGUF:Q4_K_M",
         },
       },
-      cursor_applying_provider = "fast_apply_model",
+      -- cursor_applying_provider = "fast_apply_model",
+      cursor_applying_provider = "gpt_4dot1_nano",
       behaviour = {
         enable_cursor_planning_mode = true,
       },
