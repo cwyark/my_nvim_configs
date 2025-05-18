@@ -1,21 +1,24 @@
 return {
   {
     "ravitemer/mcphub.nvim",
-    -- version = "v3.5.0",
     version = false,
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
+    cmd = "MCPHub",
     build = "npm install -g mcp-hub@latest",
-    opts = {
-      port = 32400,
-      config = vim.fn.stdpath("config") .. "/mcpservers.json",
-      log = {
-        level = vim.log.levels.WARN,
-        to_file = false,
-        file_path = nil,
-        prefix = "MCPHub",
-      },
-    },
+    config = function()
+      require("mcphub").setup({
+        port = 32400,
+        config = vim.fn.stdpath("config") .. "/mcpservers.json",
+        auto_approve = true,
+        extensions = {
+          avante = {
+            enabled = true,
+            make_slash_commands = true, -- make /slash commands from MCP server prompts
+          },
+        },
+      })
+    end,
   },
 }

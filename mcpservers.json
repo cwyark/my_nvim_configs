@@ -1,82 +1,73 @@
 {
-  "nativeMCPServers": [],
+  "nativeMCPServers": [
+    
+  ],
   "mcpServers": {
-    "git": {
-      "disabled": false,
+    "docker": {
       "command": "uvx",
-      "args": [
-        "mcp-server-git",
-        "--repository",
-        "${PWD}"
-      ]
-    },
-    "fetch": {
       "disabled": false,
-      "command": "uvx",
       "args": [
-        "mcp-server-fetch"
-      ]
-    },
-    "filesystem": {
-      "disabled": false,
-      "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-filesystem",
-        "./"
+        "docker-mcp"
       ]
     },
     "sequential-thinking": {
       "disabled": false,
+      "command": "npx",
       "custom_instructions": {
         "disabled": true
       },
-      "command": "npx",
       "args": [
         "-y",
         "@modelcontextprotocol/server-sequential-thinking"
       ]
     },
     "time": {
-      "disabled": true,
       "command": "uvx",
+      "disabled": false,
       "args": [
-        "mcp-server-time"
+        "mcp-server-time",
+        "--local-timezone=Asia/Taipei"
       ]
     },
-    "docker": {
-      "disabled": false,
+    "fetch": {
       "command": "uvx",
+      "disabled": false,
       "args": [
-        "docker-mcp"
+        "mcp-server-fetch"
       ]
     },
-    "repomix": {
+    "git": {
+      "command": "uvx",
       "disabled": false,
-      "custom_instructions": {
-        "disabled": true
-      },
-      "command": "npx",
       "args": [
-        "-y",
-        "repomix",
-        "--mcp"
+        "mcp-server-git",
+        "--repository",
+        "${PWD}"
       ]
     },
     "puppeteer": {
-      "disabled": false,
       "command": "npx",
+      "disabled": true,
       "args": [
         "-y",
         "@modelcontextprotocol/server-puppeteer"
       ]
     },
     "memory": {
-      "disabled": false,
       "command": "npx",
+      "disabled": false,
       "args": [
         "-y",
         "@modelcontextprotocol/server-memory"
+      ]
+    },
+    "filesystem": {
+      "command": "npx",
+      "disabled": false,
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "./"
       ]
     }
   }
