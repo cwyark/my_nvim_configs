@@ -58,7 +58,7 @@ return {
         },
       },
       -- cursor_applying_provider = "fast_apply_model",
-      cursor_applying_provider = "gpt_4dot1_nano",
+      cursor_applying_provider = "gpt_4dot1_mini",
       behaviour = {
         enable_cursor_planning_mode = true,
       },
@@ -71,18 +71,6 @@ return {
           require("mcphub.extensions.avante").mcp_tool(),
         }
       end,
-      disabled_tools = {
-        "list_files", -- Built-in file operations
-        "search_files",
-        "read_file",
-        "create_file",
-        "rename_file",
-        "delete_file",
-        "create_dir",
-        "rename_dir",
-        "delete_dir",
-        "bash", -- Built-in terminal access
-      },
     },
     build = "make",
     dependencies = {

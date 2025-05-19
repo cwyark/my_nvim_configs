@@ -49,7 +49,7 @@
   "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },
   "remote-nvim.nvim": { "branch": "main", "commit": "66fc20fd259401c7bb6ac5189ecb6283c2eb65d2" },
   "render-markdown.nvim": { "branch": "main", "commit": "a1b0988f5ab26698afb56b9c2f0525a4de1195c1" },
-  "rustaceanvim": { "branch": "master", "commit": "3567efce84c223519d0dcbe19ebbfb24683ec493" },
+  "rustaceanvim": { "branch": "master", "commit": "e9166120fcdd1aa617808b265e05397dc324739b" },
   "snacks.nvim": { "branch": "main", "commit": "5eac729fa290248acfe10916d92a5ed5e5c0f9ed" },
   "telescope.nvim": { "branch": "master", "commit": "b4da76be54691e854d3e0e02c36b0245f945c2c7" },
   "todo-comments.nvim": { "branch": "main", "commit": "304a8d204ee787d2544d8bc23cd38d2f929e7cc5" },
