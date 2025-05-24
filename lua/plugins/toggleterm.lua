@@ -51,6 +51,11 @@ return {
         desc = "ToggleTerm vertical split",
       },
       {
+        "<leader>tt",
+        "<cmd>ToggleTermToggleAll<cr>",
+        desc = "ToggleTerm toggle all",
+      },
+      {
         "<leader>ts",
         "<cmd>TermSelect<cr>",
         desc = "Select term",
