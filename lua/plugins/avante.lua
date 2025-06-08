@@ -5,7 +5,7 @@ return {
     version = false,
     opts = {
       provider = "gpt_4dot1",
-      vendors = {
+      providers = {
         local_ollama = {
           __inherited_from = "openai",
           endpoint = "http://127.0.0.1:11434/v1",
@@ -50,11 +50,6 @@ return {
           __inherited_from = "openai",
           endpoint = "https://api.openai.com/v1",
           model = "gpt-4.1-nano",
-        },
-        fast_apply_model = {
-          __inherited_from = "openai",
-          endpoint = "http://127.0.0.1:11434/v1",
-          model = "hf.co/Kortix/FastApply-1.5B-v1.0_GGUF:Q4_K_M",
         },
       },
       -- cursor_applying_provider = "fast_apply_model",
