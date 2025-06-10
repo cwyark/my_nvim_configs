@@ -34,6 +34,11 @@ return {
         desc = "New Scrach file with file name",
       },
       {
+        "<leader>fso",
+        "<cmd>ScratchOpen<cr>",
+        desc = "Open an existing scratch file",
+      },
+      {
         "<leader>fsf",
         "<cmd>ScratchOpenFzf<cr>",
         desc = "Fuzzy find scrach file.",
