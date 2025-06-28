@@ -4,7 +4,7 @@ return {
     event = "VeryLazy",
     version = false,
     opts = {
-      provider = "gpt_4dot1",
+      provider = "o3",
       providers = {
         local_ollama = {
           __inherited_from = "openai",
@@ -16,6 +16,11 @@ return {
           endpoint = "http://172.17.40.58:11434/v1",
           model = "gemma3:27b",
         },
+        o3 = {
+          __inherited_from = "openai",
+          endpoint = "https://api.openai.com/v1",
+          model = "o3",
+        },
         o3_mini = {
           __inherited_from = "openai",
           endpoint = "https://api.openai.com/v1",
@@ -25,16 +30,6 @@ return {
           __inherited_from = "openai",
           endpoint = "https://api.openai.com/v1",
           model = "o4-mini",
-        },
-        gpt_4o = {
-          __inherited_from = "openai",
-          endpoint = "https://api.openai.com/v1",
-          model = "gpt-4o",
-        },
-        gpt_4o_mini = {
-          __inherited_from = "openai",
-          endpoint = "https://api.openai.com/v1",
-          model = "gpt-4o-mini",
         },
         gpt_4dot1 = {
           __inherited_from = "openai",
