@@ -4,7 +4,7 @@ return {
     event = "VeryLazy",
     version = false,
     opts = {
-      provider = "o3",
+      provider = "gpt_5",
       providers = {
         local_ollama = {
           __inherited_from = "openai",
@@ -45,6 +45,30 @@ return {
           __inherited_from = "openai",
           endpoint = "https://api.openai.com/v1",
           model = "gpt-4.1-nano",
+        },
+        gpt_5 = {
+          __inherited_from = "openai",
+          endpoint = "https://api.openai.com/v1",
+          model = "gpt-5",
+          extra_request_body = {
+            temperature = 1,
+          },
+        },
+        gpt_5_mini = {
+          __inherited_from = "openai",
+          endpoint = "https://api.openai.com/v1",
+          model = "gpt-5-mini",
+          extra_request_body = {
+            temperature = 1,
+          },
+        },
+        gpt_5_nano = {
+          __inherited_from = "openai",
+          endpoint = "https://api.openai.com/v1",
+          model = "gpt-5-nano",
+          extra_request_body = {
+            temperature = 1,
+          },
         },
       },
       -- cursor_applying_provider = "fast_apply_model",
