@@ -4,7 +4,7 @@ return {
     event = "VeryLazy",
     version = false,
     opts = {
-      provider = "gpt_5",
+      provider = "gpt_5_mini",
       providers = {
         local_ollama = {
           __inherited_from = "openai",
