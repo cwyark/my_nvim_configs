@@ -20,6 +20,8 @@ return {
       "xml",
       "yaml",
       "toml",
+      "javascript",
+      "typescript",
     },
     incremental_selection = {
       enable = true,
