@@ -22,13 +22,13 @@ return {
               additional_opts = { "--exclude-vcs" },
             },
           },
-          data = {
-            base = vim.fn.stdpath("data"),
-            dirs = { "remote-tools" },
-            compression = {
-              enabled = true,
-            },
-          },
+          --data = {
+          --  base = vim.fn.stdpath("data"),
+          --  dirs = { "remote-tools" },
+          --  compression = {
+          --    enabled = true,
+          --  },
+          --},
         },
       },
     },
