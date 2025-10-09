@@ -1,72 +1,65 @@
 {
-  "nativeMCPServers": [],
   "mcpServers": {
     "docker": {
-      "command": "uvx",
-      "disabled": false,
       "args": [
         "docker-mcp"
-      ]
-    },
-    "sequential-thinking": {
-      "disabled": false,
-      "command": "npx",
-      "custom_instructions": {
-        "disabled": true
-      },
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-sequential-thinking"
-      ]
-    },
-    "time": {
+      ],
       "command": "uvx",
-      "disabled": false,
-      "args": [
-        "mcp-server-time",
-        "--local-timezone=Asia/Taipei"
-      ]
+      "disabled": false
     },
     "fetch": {
-      "command": "uvx",
-      "disabled": false,
       "args": [
         "mcp-server-fetch"
-      ]
-    },
-    "git": {
+      ],
+      "autoApprove": [],
       "command": "uvx",
-      "disabled": false,
-      "args": [
-        "mcp-server-git",
-        "--repository",
-        "${PWD}"
-      ]
-    },
-    "puppeteer": {
-      "command": "npx",
-      "disabled": true,
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-puppeteer"
-      ]
-    },
-    "memory": {
-      "command": "npx",
-      "disabled": false,
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-memory"
-      ]
+      "disabled": false
     },
     "filesystem": {
-      "command": "npx",
-      "disabled": false,
       "args": [
         "-y",
         "@modelcontextprotocol/server-filesystem",
         "./"
-      ]
+      ],
+      "command": "npx",
+      "disabled": false
+    },
+    "git": {
+      "args": [
+        "mcp-server-git",
+        "--repository",
+        "${PWD}"
+      ],
+      "command": "uvx",
+      "disabled": false
+    },
+    "memory": {
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-memory"
+      ],
+      "command": "npx",
+      "disabled": false
+    },
+    "sequential-thinking": {
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ],
+      "command": "npx",
+      "custom_instructions": {
+        "disabled": true
+      },
+      "disabled": false
+    },
+    "time": {
+      "args": [
+        "mcp-server-time",
+        "--local-timezone=Asia/Taipei"
+      ],
+      "command": "uvx",
+      "disabled": false
     }
-  }
+  },
+  "nativeMCPServers": []
 }
