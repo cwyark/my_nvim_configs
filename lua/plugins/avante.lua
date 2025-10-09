@@ -71,11 +71,6 @@ return {
           },
         },
       },
-      -- cursor_applying_provider = "fast_apply_model",
-      cursor_applying_provider = "gpt_4dot1_mini",
-      behaviour = {
-        enable_cursor_planning_mode = true,
-      },
       system_prompt = function()
         local hub = require("mcphub").get_hub_instance()
         return hub and hub:get_active_servers_prompt() or ""
@@ -88,15 +83,16 @@ return {
     },
     build = "make",
     dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      "stevearc/dressing.nvim",
       "nvim-lua/plenary.nvim",
       "MunifTanjim/nui.nvim",
-      "nvim-mini/mini.pick",
-      "nvim-telescope/telescope.nvim",
-      "hrsh7th/nvim-cmp",
-      "ibhagwan/fzf-lua",
-      "nvim-tree/nvim-web-devicons",
+
+      "nvim-mini/mini.pick", -- for file_selector provider mini.pick
+      "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
+      "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
+      "ibhagwan/fzf-lua", -- for file_selector provider fzf
+      "stevearc/dressing.nvim", -- for input provider dressing
+      "folke/snacks.nvim", -- for input provider snacks
+      "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
       {
         -- support for image pasting
         "HakonHarnes/img-clip.nvim",
