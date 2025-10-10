@@ -1,46 +1,54 @@
 return {
   {
     "yetone/avante.nvim",
+    build = "make",
     event = "VeryLazy",
     version = false,
     opts = {
-      provider = "gpt_5_codex",
+      provider = "gpt-5-mini",
       providers = {
-        local_ollama = {
-          __inherited_from = "openai",
-          endpoint = "http://127.0.0.1:11434/v1",
-          model = "gemma3:12b",
-        },
-        gpt_5 = {
+        ["gpt-5"] = {
           __inherited_from = "openai",
           endpoint = "https://api.openai.com/v1",
           model = "gpt-5",
+          context_window = 128000,
           extra_request_body = {
             temperature = 1,
+            max_completion_tokens = 16384,
+            reasoning_effort = "low",
           },
         },
-        gpt_5_codex = {
+        ["gpt-5-codex"] = {
           __inherited_from = "openai",
           endpoint = "https://api.openai.com/v1",
           model = "gpt-5-codex",
+          context_window = 128000,
           extra_request_body = {
             temperature = 1,
+            max_completion_tokens = 16384,
+            reasoning_effort = "low",
           },
         },
-        gpt_5_mini = {
+        ["gpt-5-mini"] = {
           __inherited_from = "openai",
           endpoint = "https://api.openai.com/v1",
           model = "gpt-5-mini",
+          context_window = 128000,
           extra_request_body = {
             temperature = 1,
+            max_completion_tokens = 16384,
+            reasoning_effort = "low",
           },
         },
-        gpt_5_nano = {
+        ["gpt-5-nano"] = {
           __inherited_from = "openai",
           endpoint = "https://api.openai.com/v1",
           model = "gpt-5-nano",
+          context_window = 128000,
           extra_request_body = {
             temperature = 1,
+            max_completion_tokens = 16384,
+            reasoning_effort = "low",
           },
         },
       },
@@ -54,11 +62,10 @@ return {
         }
       end,
     },
-    build = "make",
+
     dependencies = {
       "nvim-lua/plenary.nvim",
       "MunifTanjim/nui.nvim",
-
       "nvim-mini/mini.pick", -- for file_selector provider mini.pick
       "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
       "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
