@@ -4,52 +4,25 @@ return {
     event = "VeryLazy",
     version = false,
     opts = {
-      provider = "gpt_5_mini",
+      provider = "gpt_5_codex",
       providers = {
         local_ollama = {
           __inherited_from = "openai",
           endpoint = "http://127.0.0.1:11434/v1",
           model = "gemma3:12b",
         },
-        remote_ollama = {
-          __inherited_from = "openai",
-          endpoint = "http://172.17.40.58:11434/v1",
-          model = "gemma3:27b",
-        },
-        o3 = {
-          __inherited_from = "openai",
-          endpoint = "https://api.openai.com/v1",
-          model = "o3",
-        },
-        o3_mini = {
-          __inherited_from = "openai",
-          endpoint = "https://api.openai.com/v1",
-          model = "o3-mini",
-        },
-        o4_mini = {
-          __inherited_from = "openai",
-          endpoint = "https://api.openai.com/v1",
-          model = "o4-mini",
-        },
-        gpt_4dot1 = {
-          __inherited_from = "openai",
-          endpoint = "https://api.openai.com/v1",
-          model = "gpt-4.1",
-        },
-        gpt_4dot1_mini = {
-          __inherited_from = "openai",
-          endpoint = "https://api.openai.com/v1",
-          model = "gpt-4.1-mini",
-        },
-        gpt_4dot1_nano = {
-          __inherited_from = "openai",
-          endpoint = "https://api.openai.com/v1",
-          model = "gpt-4.1-nano",
-        },
         gpt_5 = {
           __inherited_from = "openai",
           endpoint = "https://api.openai.com/v1",
           model = "gpt-5",
+          extra_request_body = {
+            temperature = 1,
+          },
+        },
+        gpt_5_codex = {
+          __inherited_from = "openai",
+          endpoint = "https://api.openai.com/v1",
+          model = "gpt-5-codex",
           extra_request_body = {
             temperature = 1,
           },
