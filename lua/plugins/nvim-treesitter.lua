@@ -22,17 +22,6 @@ return {
         "typescript",
       },
     },
-    configs = {
-      incremental_selection = {
-        enable = true,
-        keymaps = {
-          init_selection = "m",
-          node_incremental = "m",
-          scope_incremental = false,
-          node_decremental = "n",
-        },
-      },
-    },
   },
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
