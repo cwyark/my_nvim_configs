@@ -5,50 +5,37 @@ return {
     event = "VeryLazy",
     version = false,
     opts = {
-      provider = "gpt-5-mini",
+      mode = "legacy",
+      provider = "coding-agent",
       providers = {
-        ["gpt-5"] = {
+        ["coding-agent"] = {
           __inherited_from = "openai",
           endpoint = "https://api.openai.com/v1",
-          model = "gpt-5",
-          context_window = 128000,
+          model = "gpt-5.1",
+          context_window = 400000,
           extra_request_body = {
-            temperature = 1,
-            max_completion_tokens = 16384,
-            reasoning_effort = "low",
+            max_completion_tokens = 128000,
+            reasoning_effort = "none",
           },
         },
-        ["gpt-5-codex"] = {
+        ["thinking-agent"] = {
           __inherited_from = "openai",
           endpoint = "https://api.openai.com/v1",
-          model = "gpt-5-codex",
-          context_window = 128000,
+          model = "gpt-5.1",
+          context_window = 400000,
           extra_request_body = {
-            temperature = 1,
-            max_completion_tokens = 16384,
-            reasoning_effort = "low",
+            max_completion_tokens = 128000,
+            reasoning_effort = "medium",
           },
         },
-        ["gpt-5-mini"] = {
+        ["summary-agent"] = {
           __inherited_from = "openai",
           endpoint = "https://api.openai.com/v1",
-          model = "gpt-5-mini",
-          context_window = 128000,
+          model = "gpt-4.1-mini",
+          context_window = 1047576,
           extra_request_body = {
-            temperature = 1,
-            max_completion_tokens = 16384,
-            reasoning_effort = "low",
-          },
-        },
-        ["gpt-5-nano"] = {
-          __inherited_from = "openai",
-          endpoint = "https://api.openai.com/v1",
-          model = "gpt-5-nano",
-          context_window = 128000,
-          extra_request_body = {
-            temperature = 1,
-            max_completion_tokens = 16384,
-            reasoning_effort = "low",
+            temperature = 0.75,
+            max_completion_tokens = 32768,
           },
         },
       },
