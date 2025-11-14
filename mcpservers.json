@@ -7,6 +7,13 @@
       "command": "uvx",
       "disabled": false
     },
+    "code-index": {
+      "args": [
+        "code-index-mcp"
+      ],
+      "command": "uvx",
+      "disabled": false
+    },
     "fetch": {
       "args": [
         "mcp-server-fetch"
@@ -31,7 +38,7 @@
         "${PWD}"
       ],
       "command": "uvx",
-      "disabled": false
+      "disabled": true
     },
     "memory": {
       "args": [
