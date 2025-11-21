@@ -1,15 +1,15 @@
 {
   "mcpServers": {
-    "docker": {
+    "code-index": {
       "args": [
-        "docker-mcp"
+        "code-index-mcp"
       ],
       "command": "uvx",
       "disabled": false
     },
-    "code-index": {
+    "docker": {
       "args": [
-        "code-index-mcp"
+        "docker-mcp"
       ],
       "command": "uvx",
       "disabled": false
@@ -38,7 +38,7 @@
         "${PWD}"
       ],
       "command": "uvx",
-      "disabled": true
+      "disabled": false
     },
     "memory": {
       "args": [
