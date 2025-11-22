@@ -4,11 +4,11 @@ return {
   cmd = { "Codex", "CodexToggle" },
   keys = {
     {
-      "<leader>cc", -- Change this to your preferred keybinding
+      "<leader>ac", -- Change this to your preferred keybinding
       function()
         require("codex").toggle()
       end,
-      desc = "Toggle Codex popup or side-panel",
+      desc = "Codex: Toggle Codex Cli panel",
       mode = { "n", "t" },
     },
   },
